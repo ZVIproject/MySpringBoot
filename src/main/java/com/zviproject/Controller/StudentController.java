@@ -60,10 +60,10 @@ public class StudentController {
 	 * @return
 	 */
 
-	@RequestMapping(method = RequestMethod.PUT)
-	public String updateStudent(@RequestBody Student student, int id) {
+	@RequestMapping(value = "/update", method = RequestMethod.PUT)
+	public String updateStudent(@RequestBody Student student) {
 		this.studentServices.updateStudent(student);
-		return "id " + id + "- was changed";
+		return "Student - was changed";
 	}
 
 	/**
@@ -74,10 +74,10 @@ public class StudentController {
 	 * @return
 	 */
 
-	@RequestMapping(method = RequestMethod.POST)
-	public String createStudent(@RequestBody Student student, int id) {
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	public String createStudent(@RequestBody Student student) {
 		this.studentServices.createStudent(student);
-		return "id " + id + "- was create";
+		return "Student - was create";
 	}
 
 }
