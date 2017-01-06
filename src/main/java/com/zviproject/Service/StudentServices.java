@@ -3,16 +3,19 @@ package com.zviproject.Service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.zviproject.Dao.StudentDaoImpl;
+import com.zviproject.Dao.StudentDao;
 import com.zviproject.Entity.Student;
 
 @Service
+
 public class StudentServices {
 
 	@Autowired
-	private StudentDaoImpl studentDao;
+	@Qualifier("mysql")
+	private StudentDao studentDao;
 
 	public Collection<Student> getAllStudents() {
 		return studentDao.getAllStudents();
